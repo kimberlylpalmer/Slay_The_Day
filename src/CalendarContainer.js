@@ -5,7 +5,7 @@ import DailyCal from "./DailyCal";
 
 const holidaysAPI = "https://date.nager.at/api/v3/PublicHolidays/2023/US";
 
-function CalendarContainer() {
+function CalendarContainer({allEvents}) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function CalendarContainer() {
 
   return (
     <div>
-      <MonthlyCal />
+      <MonthlyCal allEvents={allEvents}/>
       <WeeklyCal events={events} />
       <DailyCal />
     </div>

@@ -1,14 +1,16 @@
 {
-    "events": [
-        {
-            "title": "Big Meeting",
-            "start": "2023-12-12",
-            "end": "2023-12-12"
-        },
-        {
-            "title": "Vacation",
-            "start": "2023-12-10",
-            "end": "2023-12-15"
-        }
-    ]
+  "appointments": [
+    {
+      "id": 1,
+      "title": "Big Meeting",
+      "start": "2023-12-12",
+      "end": "2023-12-12"
+    },
+    {
+      "id": 2,
+      "title": "Vacation",
+      "start": "2023-12-10",
+      "end": "2023-12-15"
+    }
+  ]
 }
