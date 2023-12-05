@@ -67,7 +67,7 @@ function CalendarContainer({allEvents}) {
             </button>
         </nav>
         <Routes>
-            <Route path="/MonthlyCal" element={<MonthlyCal allEvents={allEvents}/>}>
+            <Route path="/MonthlyCal" element={<MonthlyCal events={events} allEvents={allEvents}/>}>
             </Route>
             <Route path="/WeeklyCal" element={<WeeklyCal events={events} />}>
             </Route>
