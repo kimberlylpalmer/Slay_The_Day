@@ -59,6 +59,11 @@ function customToolBar(toolbar) {
 }
 
 function WeeklyCal({ events }) {
+  const minTime = new Date();
+  minTime.setHours(6, 0, 0);
+  const maxTime = new Date();
+  maxTime.setHours(20, 0, 0);
+
   return (
     <div>
       <Calendar
@@ -72,6 +77,8 @@ function WeeklyCal({ events }) {
         }}
         showMultiDayTimes={false}
         dayLayoutAlgorithm="no-overlap"
+        min={minTime}
+        max={maxTime}
       />
     </div>
   );
