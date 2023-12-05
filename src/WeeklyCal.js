@@ -64,8 +64,8 @@ function WeeklyCal({ events }) {
       <Calendar
         localizer={localizer}
         events={events}
-        defaultView="agenda"
-        views={{ agenda: true }}
+        defaultView="week"
+        views={{ week: true, agenda: true }}
         components={{
           event: Event,
           toolbar: customToolBar,
