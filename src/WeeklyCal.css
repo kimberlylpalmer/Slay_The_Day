@@ -1,0 +1,16 @@
+.rbc-time-view .rbc-time-gutter,
+.rbc-time-view .rbc-allday-cell {
+  display: none;
+}
+
+.rbc-time-header {
+  display: none;
+}
+
+.rbc-time-content {
+  border-left: 0;
+}
+
+.rbc-day-slot .rbc-events-container {
+  margin-top: 0;
+}
