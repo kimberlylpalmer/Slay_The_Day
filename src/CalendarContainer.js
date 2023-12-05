@@ -3,6 +3,12 @@ import MonthlyCal from "./MonthlyCal";
 import WeeklyCal from "./WeeklyCal";
 import DailyCal from "./DailyCal";
 import { zonedTimeToUtc, utcToZonedTime, format } from "date-fns-tz";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+} from "react-router-dom"
 
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -47,11 +53,29 @@ function CalendarContainer({allEvents}) {
   }, []);
 
   return (
+    <Router>
     <div>
-      <MonthlyCal allEvents={allEvents}/>
-      <WeeklyCal events={events} />
-      <DailyCal />
+        <nav>
+            <button>
+                <Link to="/MonthlyCal">Monthly Calendar</Link>
+            </button>
+            <button>
+                <Link to="/WeeklyCal">Weekly Calendar</Link>
+            </button>
+            <button>
+                <Link to="/DailyCal">Daily Calendar</Link>
+            </button>
+        </nav>
+        <Routes>
+            <Route path="/MonthlyCal" element={<MonthlyCal allEvents={allEvents}/>}>
+            </Route>
+            <Route path="/WeeklyCal" element={<WeeklyCal events={events} />}>
+            </Route>
+            <Route path="/DailyCal" element={<DailyCal />}>
+            </Route>
+      </Routes>
     </div>
+    </Router>
   );
 }
 
