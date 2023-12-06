@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CalendarContainer from "./components/CalendarContainer";
 import Footer from "./components/Footer";
-import {BrowserRouter as Router}  from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 
 const eventsAPI = "http://localhost:3000/appointments";
 // console.log(eventsAPI);
@@ -57,6 +57,8 @@ function App() {
   }
 
   function handleAddEvent(newEvent) {
+    newEvent.start = new Date(newEvent.start);
+    newEvent.end = new Date(newEvent.end);
     setAllEvents([...allEvents, newEvent]);
   }
 
@@ -66,17 +68,16 @@ function App() {
 
   return (
     <Router>
+      <div className="App">
+        <Header handleAddEvent={handleAddEvent} />
+        <CalendarContainer
+          allEvents={allEvents}
+          holidayEvents={holidayEvents}
+          onYearChange={onYearChange}
+        />
 
-    <div className="App">
-      <Header handleAddEvent={handleAddEvent} />
-      <CalendarContainer
-        allEvents={allEvents}
-        holidayEvents={holidayEvents}
-        onYearChange={onYearChange}
-      />
-
-      <Footer contacts={contacts} handleAddContact={handleAddContact} />
-    </div>
+        <Footer contacts={contacts} handleAddContact={handleAddContact} />
+      </div>
     </Router>
   );
 }

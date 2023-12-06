@@ -1,13 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-const eventsAPI = "http://localhost:3000/appointments"
+const eventsAPI = "http://localhost:3000/appointments";
 
-function AddEventForm({handleAddEvent}) {
-    const [newEvent, setNewEvent] = useState({title: '', start: '', end: ''})
-
+function AddEventForm({ handleAddEvent }) {
+  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
+  
     function handleSubmit(e) {
-        
         e.preventDefault()
+      
         fetch(eventsAPI, {
 			method: 'POST',
 			headers: {
@@ -17,8 +17,7 @@ function AddEventForm({handleAddEvent}) {
 			body: JSON.stringify(newEvent)
 		})
 		.then(res => res.json())
-		.then(handleAddEvent)
-        e.target.reset()
+		.then(handleAddEvent);
     }
 
     return (
