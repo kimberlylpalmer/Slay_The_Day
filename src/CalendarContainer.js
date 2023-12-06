@@ -4,7 +4,7 @@ import WeeklyCal from "./WeeklyCal";
 import DailyCal from "./DailyCal";
 import ContactsList from "./ContactsList";
 import { zonedTimeToUtc, utcToZonedTime, format } from "date-fns-tz";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -27,7 +27,6 @@ function convertEventDatesToTimeZone(event) {
 function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
   const combinedEvents = [...allEvents, ...holidayEvents];
   return (
-    <Router>
       <div>
         <nav>
           <button>
@@ -42,6 +41,7 @@ function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
           <button>
             <Link to="/DailyCal">Daily Calendar</Link>
           </button>
+         
 
         </nav>
         <Routes>
@@ -64,7 +64,6 @@ function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
           <Route path="/ContactsList" element={<ContactsList />}></Route>
         </Routes>
       </div>
-    </Router>
   );
 }
 
