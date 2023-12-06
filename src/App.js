@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import CalendarContainer from "./CalendarContainer";
-import Footer from "./Footer";
+import Header from "./components/Header";
+import CalendarContainer from "./components/CalendarContainer";
+import Footer from "./components/Footer";
 import {BrowserRouter as Router}  from "react-router-dom"
 
 const eventsAPI = "http://localhost:3000/appointments";
