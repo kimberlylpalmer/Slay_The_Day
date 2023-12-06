@@ -24,7 +24,6 @@ function AddEventForm({handleAddEvent}) {
 
     return (
         <div>
-             <h2>Add New Event</h2>
             <form onSubmit={handleSubmit}>
                 <input type='text' placeholder="Add Title" style={{width: "20%", marginRight: "10px"}}
                 value={newEvent.title} onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}/>

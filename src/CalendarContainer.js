@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MonthlyCal from "./MonthlyCal";
 import WeeklyCal from "./WeeklyCal";
 import DailyCal from "./DailyCal";
+import ContactsList from "./ContactsList";
 import { zonedTimeToUtc, utcToZonedTime, format } from "date-fns-tz";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -50,8 +51,10 @@ function CalendarContainer({ allEvents, holidayEvents }) {
           <Route
             path="/DailyCal"
             element={<DailyCal events={combinedEvents} />}></Route>
+           <Route path="/ContactsList" element={<ContactsList />}></Route
         </Routes>
       </div>
+
     </Router>
   );
 }
