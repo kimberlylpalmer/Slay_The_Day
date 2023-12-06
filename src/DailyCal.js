@@ -91,17 +91,18 @@ function customToolBar(
 }
 
 function DailyCal({ events, onYearChange }) {
-  const [currentDate, setCurrentDate] = useState(new Date());
-  const [showDatePicker, setShowDatePicker] = useState(false);
   const minTime = new Date();
   minTime.setHours(6, 0, 0);
   const maxTime = new Date();
   maxTime.setHours(20, 0, 0);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [previousYear, setPreviousYear] = useState(currentDate.getFullYear());
 
   useEffect(() => {
     const newYear = currentDate.getFullYear();
     if (newYear !== previousYear) {
+      // console.log("changing year in daily to: ", newYear);
       onYearChange(newYear);
       setPreviousYear(newYear);
     }

@@ -26,18 +26,20 @@ function App() {
           start: new Date(event.start),
           end: new Date(event.end),
         }));
-        console.log("Formatted All Events:", formattedEvents);
+        // console.log("Formatted All Events:", formattedEvents);
         setAllEvents(formattedEvents);
       });
 
     fetch(holidaysAPI)
       .then((res) => res.json())
       .then((data) => {
+        // console.log("received holiday data", data);
         const formattedEvents = data.map((holiday) => ({
           title: holiday.name,
           start: new Date(holiday.date + "T00:00:00"),
           end: new Date(holiday.date + "T23:59:59"),
         }));
+        // console.log("holidays", formattedEvents);
         setHolidayEvents(formattedEvents);
       });
   }, [displayedYear]);
@@ -49,6 +51,7 @@ function App() {
   }, []);
 
   function onYearChange(newYear) {
+    // console.log("Year Changed To: ", newYear);
     setDisplayedYear(newYear);
   }
 
