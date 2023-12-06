@@ -14,6 +14,7 @@ const contactsAPI = "http://localhost:3000/contacts"
 function App() {
   const [allEvents, setAllEvents] = useState([]);
   const [holidayEvents, setHolidayEvents] = useState([]);
+  const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
     fetch(eventsAPI)
@@ -59,7 +60,6 @@ function App() {
       <Header handleAddEvent={handleAddEvent} />
       <CalendarContainer allEvents={allEvents} holidayEvents={holidayEvents} />
       <Footer contacts={contacts} handleAddContact={handleAddContact}/>  
-
     </div>
   );
 }
