@@ -3,7 +3,7 @@ import MonthlyCal from "./MonthlyCal";
 import WeeklyCal from "./WeeklyCal";
 import DailyCal from "./DailyCal";
 import ContactsList from "./ContactsList";
-
+import "../style.css";
 import { Routes, Route, Link } from "react-router-dom";
 
 function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {

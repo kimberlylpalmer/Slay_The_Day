@@ -12,7 +12,13 @@
       "title": "Vacation",
       "start": "2023-12-10",
       "end": "2023-12-15"
-
+    },
+    {
+      "title": "test",
+      "start": "2023-12-07T17:30:00.000Z",
+      "end": "2023-12-07T18:00:00.000Z",
+      "contact": "Holly",
+      "id": 3
     }
   ],
   "contacts": [

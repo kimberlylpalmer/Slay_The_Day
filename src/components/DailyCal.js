@@ -8,6 +8,7 @@ import addDays from "date-fns/addDays";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import "../style.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -109,13 +110,13 @@ function DailyCal({ events, onYearChange }) {
     }
   }, [currentDate, previousYear, onYearChange]);
 
-  const [selectedEvent, setSelectedEvent] = useState(undefined)
-  const [modalState, setModalState] = useState(false)
-  
+  const [selectedEvent, setSelectedEvent] = useState(undefined);
+  const [modalState, setModalState] = useState(false);
+
   const handleSelectedEvent = (event) => {
-    setSelectedEvent(event)
-    setModalState(true)
-  }
+    setSelectedEvent(event);
+    setModalState(true);
+  };
 
   const closeModal = () => {
     setModalState(false);
@@ -123,17 +124,19 @@ function DailyCal({ events, onYearChange }) {
 
   const Modal = () => {
     return (
-      <div className={`modal-${modalState == true ? 'show' : 'hide'}`}>
-          <button onClick={closeModal}>x</button>
-            <h3>{selectedEvent.title}</h3>
-            <p>Starts {selectedEvent.start.toDateString()}</p>
-            <p>Ends {selectedEvent.start.toDateString()}</p>
-            {selectedEvent.contact && 
-              <a href={`http://localhost:3001/ContactsList`}>Contacts: {selectedEvent.contact} </a>}
-          
+      <div className={`modal-${modalState == true ? "show" : "hide"}`}>
+        <button onClick={closeModal}>x</button>
+        <h3>{selectedEvent.title}</h3>
+        <p>Starts {selectedEvent.start.toDateString()}</p>
+        <p>Ends {selectedEvent.start.toDateString()}</p>
+        {selectedEvent.contact && (
+          <a href={`http://localhost:3001/ContactsList`}>
+            Contacts: {selectedEvent.contact}{" "}
+          </a>
+        )}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div>
