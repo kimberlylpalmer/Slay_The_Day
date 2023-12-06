@@ -4,7 +4,10 @@ import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
+import addDays from "date-fns/addDays";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -39,28 +42,61 @@ function Event({ event }) {
   );
 }
 
-function customToolBar(toolbar) {
+function customToolBar(
+  toolbar,
+  currentDate,
+  setCurrentDate,
+  setShowDatePicker,
+  showDatePicker
+) {
   const goToBack = () => {
-    toolbar.date.setHours(0, 0, 0, 0);
+    const newDate = addDays(currentDate, -1);
+    setCurrentDate(newDate);
     toolbar.onNavigate("PREV");
   };
 
   const goToNext = () => {
-    toolbar.date.setHours(0, 0, 0, 0);
+    const newDate = addDays(currentDate, 1);
+    setCurrentDate(newDate);
     toolbar.onNavigate("NEXT");
+  };
+
+  const goToToday = () => {
+    const today = new Date();
+    setCurrentDate(today);
+    toolbar.onNavigate("TODAY", today);
   };
 
   return (
     <div>
+      <button onClick={goToToday}>Today</button>
       <button onClick={goToBack}>{"<"}</button>
-      <span>{format(toolbar.date, "MMMM yyyy")}</span>
+      <span>{format(currentDate, "EEEE, MMMMdo, yyyy")}</span>
       <button onClick={goToNext}>{">"}</button>
+      <button onClick={() => setShowDatePicker(!showDatePicker)}>
+        Pick a date
+      </button>
+      {showDatePicker && (
+        <DatePicker
+          selected={currentDate}
+          onChange={(date) => {
+            setCurrentDate(date);
+            toolbar.onNavigate("DATE", date);
+          }}
+          inline
+        />
+      )}
     </div>
   );
 }
 
 function DailyCal({ events }) {
-  const currentDate = new Date();
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const minTime = new Date();
+  minTime.setHours(6, 0, 0);
+  const maxTime = new Date();
+  maxTime.setHours(20, 0, 0);
 
   return (
     <div>
@@ -68,14 +104,25 @@ function DailyCal({ events }) {
       <Calendar
         localizer={localizer}
         events={events}
+        date={currentDate}
+        onNaviate={(date) => setCurrentDate(date)}
         defaultView="day"
         views={{ day: true, agenda: true }}
         components={{
           event: Event,
-          toolbar: customToolBar,
+          toolbar: (toolbar) =>
+            customToolBar(
+              toolbar,
+              currentDate,
+              setCurrentDate,
+              setShowDatePicker,
+              showDatePicker
+            ),
         }}
         showMultiDayTimes={false}
         dayLayoutAlgorithm="no-overlap"
+        min={minTime}
+        max={maxTime}
       />
     </div>
   );

@@ -4,12 +4,7 @@ import WeeklyCal from "./WeeklyCal";
 import DailyCal from "./DailyCal";
 import ContactsList from "./ContactsList";
 import { zonedTimeToUtc, utcToZonedTime, format } from "date-fns-tz";
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link
-} from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
@@ -29,54 +24,37 @@ function convertEventDatesToTimeZone(event) {
   };
 }
 
-const holidaysAPI = "https://date.nager.at/api/v3/PublicHolidays/2023/US";
-
-function CalendarContainer({allEvents}) {
-  const [events, setEvents] = useState([]);
-
-  useEffect(() => {
-    fetch(holidaysAPI)
-      .then((r) => r.json())
-      .then((data) => {
-        const formattedEvents = data
-          .map((holiday) => {
-            const event = {
-              title: holiday.name,
-              start: holiday.date,
-              end: holiday.date,
-            };
-            return convertEventDatesToTimeZone(event);
-          })
-          .filter((e) => e !== null);
-        console.log(formattedEvents);
-        setEvents(formattedEvents);
-      });
-  }, []);
-
+function CalendarContainer({ allEvents, holidayEvents }) {
+  const combinedEvents = [...allEvents, ...holidayEvents];
   return (
     <Router>
-    <div>
+      <div>
         <nav>
-            <button>
-                <Link to="/MonthlyCal">Monthly Calendar</Link>
-            </button>
-            <button>
-                <Link to="/WeeklyCal">Weekly Calendar</Link>
-            </button>
-            <button>
-                <Link to="/DailyCal">Daily Calendar</Link>
-            </button>
+          <button>
+            <Link to="/MonthlyCal">Monthly Calendar</Link>
+          </button>
+          <button>
+            <Link to="/WeeklyCal">Weekly Calendar</Link>
+          </button>
+          <button>
+            <Link to="/DailyCal">Daily Calendar</Link>
+          </button>
         </nav>
         <Routes>
-            <Route path="/MonthlyCal" element={<MonthlyCal events={events} allEvents={allEvents}/>}>
-            </Route>
-            <Route path="/WeeklyCal" element={<WeeklyCal events={events} />}>
-            </Route>
-            <Route path="/DailyCal" element={<DailyCal />}></Route>
-            <Route path="/ContactsList" element={<ContactsList />}></Route>
-            
-      </Routes>
-    </div>
+
+          <Route
+            path="/MonthlyCal"
+            element={<MonthlyCal events={combinedEvents} />}></Route>
+          <Route
+            path="/WeeklyCal"
+            element={<WeeklyCal events={combinedEvents} />}></Route>
+          <Route
+            path="/DailyCal"
+            element={<DailyCal events={combinedEvents} />}></Route>
+           <Route path="/ContactsList" element={<ContactsList />}></Route
+        </Routes>
+      </div>
+
     </Router>
   );
 }
