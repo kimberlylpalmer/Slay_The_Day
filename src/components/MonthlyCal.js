@@ -19,7 +19,7 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-function MonthlyCal({ allEvents, events, onYearChange }) {
+function MonthlyCal({ events, onYearChange }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [previousYear, setPreviousYear] = useState(currentDate.getFullYear());
 

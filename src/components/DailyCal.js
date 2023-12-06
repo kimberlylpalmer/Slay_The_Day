@@ -82,6 +82,7 @@ function customToolBar(
           onChange={(date) => {
             setCurrentDate(date);
             toolbar.onNavigate("DATE", date);
+            setShowDatePicker(false);
           }}
           inline
         />
