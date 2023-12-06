@@ -20,7 +20,6 @@ const localizer = dateFnsLocalizer({
 });
 
 
-
 function MonthlyCal({allEvents, events}) {
 
     return (
@@ -28,13 +27,15 @@ function MonthlyCal({allEvents, events}) {
            
             <Calendar 
                 localizer={localizer} 
-                events={allEvents}
+                events={events}
                 views={ {month:true, week:false, day:false, agenda:false} }
                 startAccessor="start" 
                 endAccessor="end" 
+                allDayAccessor="allDay"
                 style={{height: 500, margin: "50 px"}} />
         </div>
     )
+
 
 }
 

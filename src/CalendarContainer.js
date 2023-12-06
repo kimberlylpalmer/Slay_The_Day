@@ -23,29 +23,8 @@ function convertEventDatesToTimeZone(event) {
   };
 }
 
-const holidaysAPI = "https://date.nager.at/api/v3/PublicHolidays/2023/US";
-
-function CalendarContainer({ allEvents }) {
-  const [events, setEvents] = useState([]);
-
-  useEffect(() => {
-    fetch(holidaysAPI)
-      .then((r) => r.json())
-      .then((data) => {
-        const formattedEvents = data
-          .map((holiday) => {
-            const event = {
-              title: holiday.name,
-              start: holiday.date,
-              end: holiday.date,
-            };
-            return convertEventDatesToTimeZone(event);
-          })
-          .filter((e) => e !== null);
-        setEvents(formattedEvents);
-      });
-  }, []);
-
+function CalendarContainer({ allEvents, holidayEvents }) {
+  const combinedEvents = [...allEvents, ...holidayEvents];
   return (
     <Router>
       <div>
@@ -64,13 +43,13 @@ function CalendarContainer({ allEvents }) {
 
           <Route
             path="/MonthlyCal"
-            element={<MonthlyCal allEvents={allEvents} />}></Route>
+            element={<MonthlyCal events={combinedEvents} />}></Route>
           <Route
             path="/WeeklyCal"
-            element={<WeeklyCal events={events} />}></Route>
+            element={<WeeklyCal events={combinedEvents} />}></Route>
           <Route
             path="/DailyCal"
-            element={<DailyCal events={events} />}></Route>
+            element={<DailyCal events={combinedEvents} />}></Route>
         </Routes>
       </div>
     </Router>
