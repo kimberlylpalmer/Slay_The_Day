@@ -24,13 +24,13 @@ function convertEventDatesToTimeZone(event) {
   };
 }
 
-function CalendarContainer({ allEvents, holidayEvents }) {
+function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
   const combinedEvents = [...allEvents, ...holidayEvents];
   return (
     <Router>
       <div>
         <nav>
-        <button>
+          <button>
             <Link to="/">Home</Link>
           </button>
           <button>
@@ -44,16 +44,22 @@ function CalendarContainer({ allEvents, holidayEvents }) {
           </button>
         </nav>
         <Routes>
-        <Route path="/" />
+          <Route path="/" />
           <Route
             path="/MonthlyCal"
-            element={<MonthlyCal events={combinedEvents} />}></Route>
+            element={
+              <MonthlyCal events={combinedEvents} onYearChange={onYearChange} />
+            }></Route>
           <Route
             path="/WeeklyCal"
-            element={<WeeklyCal events={combinedEvents} />}></Route>
+            element={
+              <WeeklyCal events={combinedEvents} onYearChange={onYearChange} />
+            }></Route>
           <Route
             path="/DailyCal"
-            element={<DailyCal events={combinedEvents} />}></Route>
+            element={
+              <DailyCal events={combinedEvents} onYearChange={onYearChange} />
+            }></Route>
           <Route path="/ContactsList" element={<ContactsList />}></Route>
         </Routes>
       </div>

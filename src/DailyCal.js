@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
@@ -90,13 +90,22 @@ function customToolBar(
   );
 }
 
-function DailyCal({ events }) {
+function DailyCal({ events, onYearChange }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const minTime = new Date();
   minTime.setHours(6, 0, 0);
   const maxTime = new Date();
   maxTime.setHours(20, 0, 0);
+  const [previousYear, setPreviousYear] = useState(currentDate.getFullYear());
+
+  useEffect(() => {
+    const newYear = currentDate.getFullYear();
+    if (newYear !== previousYear) {
+      onYearChange(newYear);
+      setPreviousYear(newYear);
+    }
+  }, [currentDate, previousYear, onYearChange]);
 
   return (
     <div>
@@ -105,7 +114,7 @@ function DailyCal({ events }) {
         localizer={localizer}
         events={events}
         date={currentDate}
-        onNaviate={(date) => setCurrentDate(date)}
+        onNavigate={(date) => setCurrentDate(date)}
         defaultView="day"
         views={{ day: true, agenda: true }}
         components={{
