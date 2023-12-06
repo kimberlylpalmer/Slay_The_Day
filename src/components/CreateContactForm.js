@@ -62,7 +62,7 @@ function CreateContactForm({ handleAddContacts }) {
             setNewContact({ ...newContact, address: e.target.value })
           }
         />
-        <button style={{ marginTop: "10px" }} type="submit">
+        <button class="button" type="submit">
           Add Contact
         </button>
       </form>
