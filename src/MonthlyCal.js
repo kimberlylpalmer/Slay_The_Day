@@ -19,24 +19,28 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
+function MonthlyCal({ allEvents, events }) {
+  const [currentDate, setCurrentDate] = useState(new Date());
 
-function MonthlyCal({allEvents, events}) {
+  const handleNavigate = (newDate) => {
+    setCurrentDate(newDate);
+  };
 
-    return (
-            <div> 
-           
-            <Calendar 
-                localizer={localizer} 
-                events={events}
-                views={ {month:true, week:false, day:false, agenda:false} }
-                startAccessor="start" 
-                endAccessor="end" 
-                allDayAccessor="allDay"
-                style={{height: 500, margin: "50 px"}} />
-        </div>
-    )
-
-
+  return (
+    <div>
+      <Calendar
+        localizer={localizer}
+        events={events}
+        views={{ month: true, week: false, day: false, agenda: false }}
+        startAccessor="start"
+        endAccessor="end"
+        allDayAccessor="allDay"
+        style={{ height: 500, margin: "50 px" }}
+        onNavigate={handleNavigate}
+        date={currentDate}
+      />
+    </div>
+  );
 }
 
 export default MonthlyCal;
