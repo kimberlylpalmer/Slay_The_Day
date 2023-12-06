@@ -5,10 +5,10 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    Link
+    Link,
 } from "react-router-dom"
 
-function Footer ({contacts, handleAddContact}) {
+function Footer ({contacts, handleAddContact}) {;
 
     const [showForm, setShowForm] = useState(false);
 
@@ -22,7 +22,7 @@ function Footer ({contacts, handleAddContact}) {
              <Router>
                 <nav>
                     <button>
-                        <Link to="/ContactsList">Contacts List</Link>
+                        <Link to={"/ContactsList"}>Contacts List</Link>
                     </button>
                 </nav>
             </Router>
