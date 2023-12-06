@@ -20,14 +20,14 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-const events = [
-  {
-    title: "Event 1",
-    desc: "Description for Event 1",
-    start: new Date(2023, 0, 1),
-    end: new Date(2023, 0, 1),
-  },
-];
+// const events = [
+//   {
+//     title: "Event 1",
+//     desc: "Description for Event 1",
+//     start: new Date(2023, 0, 1),
+//     end: new Date(2023, 0, 1),
+//   },
+// ];
 
 function Event({ event }) {
   if (!event) {
@@ -79,6 +79,7 @@ function customToolBar(
           onChange={(date) => {
             setCurrentDate(date);
             toolbar.onNavigate("DATE", date);
+            setShowDatePicker(false);
           }}
           inline
         />
