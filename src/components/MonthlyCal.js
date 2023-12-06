@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
@@ -19,8 +19,18 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-function MonthlyCal({ allEvents, events }) {
+function MonthlyCal({ allEvents, events, onYearChange }) {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [previousYear, setPreviousYear] = useState(currentDate.getFullYear());
+
+  useEffect(() => {
+    const newYear = currentDate.getFullYear();
+    if (newYear !== previousYear) {
+      console.log("changing year in month to: ", newYear);
+      onYearChange(newYear);
+      setPreviousYear(newYear);
+    }
+  }, [currentDate, previousYear, onYearChange]);
 
   const handleNavigate = (newDate) => {
     setCurrentDate(newDate);
