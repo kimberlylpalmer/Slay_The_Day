@@ -4,12 +4,11 @@ import Header from "./Header";
 import CalendarContainer from "./CalendarContainer";
 import Footer from "./Footer";
 
-
 const holidaysAPI = "https://date.nager.at/api/v3/PublicHolidays/2023/US";
 // console.log("test", holidaysAPI);
 const eventsAPI = "http://localhost:3000/appointments";
 // console.log(eventsAPI);
-const contactsAPI = "http://localhost:3000/contacts"
+const contactsAPI = "http://localhost:3000/contacts";
 
 function App() {
   const [allEvents, setAllEvents] = useState([]);
@@ -40,26 +39,28 @@ function App() {
         setHolidayEvents(formattedEvents);
       });
   }, []);
-  
+
   useEffect(() => {
     fetch(contactsAPI)
-    .then(res => res.json())
-    .then(setContacts)
-  }, [])
+      .then((res) => res.json())
+      .then(setContacts);
+  }, []);
 
   function handleAddEvent(newEvent) {
     setAllEvents([...allEvents, newEvent]);
   }
 
   function handleAddContact(newContact) {
-    setContacts([...contacts, newContact])
+    setContacts([...contacts, newContact]);
   }
 
   return (
     <div className="App">
       <Header handleAddEvent={handleAddEvent} />
       <CalendarContainer allEvents={allEvents} holidayEvents={holidayEvents} />
-      <Footer contacts={contacts} handleAddContact={handleAddContact}/>  
+
+      <Footer contacts={contacts} handleAddContact={handleAddContact} />
+
     </div>
   );
 }

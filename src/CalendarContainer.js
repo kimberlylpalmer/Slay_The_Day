@@ -54,12 +54,9 @@ function CalendarContainer({ allEvents, holidayEvents }) {
           <Route
             path="/DailyCal"
             element={<DailyCal events={combinedEvents} />}></Route>
-           <Route 
-           path="/ContactsList" 
-           element={<ContactsList />}></Route>
+          <Route path="/ContactsList" element={<ContactsList />}></Route>
         </Routes>
       </div>
-
     </Router>
   );
 }
