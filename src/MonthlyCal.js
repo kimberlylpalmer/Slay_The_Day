@@ -19,36 +19,23 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-// const events = [
-//     {
-//         title: "Big Meeting",
-//         start: new Date(2023,12,0),
-//         end: new Date(2023,12,0)
-//     },
-//     {
-//         title: "Vacation",
-//         start: new Date(2023,12,7),
-//         end: new Date(2023,12,10)
-//     },
-//     {
-//         title: "Conference",
-//         start: new Date(2023,12,20),
-//         end: new Date(2023,12,23)
-//     }
-// ]
 
-function MonthlyCal({ allEvents }) {
-  return (
-    <div>
-      <Calendar
-        localizer={localizer}
-        events={allEvents}
-        startAccessor="start"
-        endAccessor="end"
-        style={{ height: 500, margin: "50 px" }}
-      />
-    </div>
-  );
+
+function MonthlyCal({allEvents, events}) {
+
+    return (
+            <div> 
+           
+            <Calendar 
+                localizer={localizer} 
+                events={allEvents}
+                views={ {month:true, week:false, day:false, agenda:false} }
+                startAccessor="start" 
+                endAccessor="end" 
+                style={{height: 500, margin: "50 px"}} />
+        </div>
+    )
+
 }
 
 export default MonthlyCal;
