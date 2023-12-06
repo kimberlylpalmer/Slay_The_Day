@@ -58,7 +58,9 @@ function App() {
     <div className="App">
       <Header handleAddEvent={handleAddEvent} />
       <CalendarContainer allEvents={allEvents} holidayEvents={holidayEvents} />
+
       <Footer contacts={contacts} handleAddContact={handleAddContact} />
+
     </div>
   );
 }
