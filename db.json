@@ -12,5 +12,15 @@
       "start": "2023-12-10",
       "end": "2023-12-15"
     }
+  ],
+
+  "contacts": [
+    {
+        "id": 1,
+        "name": "Holly Wheeler",
+        "phone": "(510) 926-2776",
+        "email": "hollyawheeler.96@gmail.com",
+        "address": "123 First Avenue, Oakland CA 94608"
+    }
   ]
 }
