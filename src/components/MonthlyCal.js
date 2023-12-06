@@ -26,7 +26,7 @@ function MonthlyCal({ allEvents, events, onYearChange }) {
   useEffect(() => {
     const newYear = currentDate.getFullYear();
     if (newYear !== previousYear) {
-      console.log("changing year in month to: ", newYear);
+      console.log("testing changing year in month to: ", newYear);
       onYearChange(newYear);
       setPreviousYear(newYear);
     }
