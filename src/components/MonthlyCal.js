@@ -57,7 +57,7 @@ function MonthlyCal({ events, onYearChange }) {
             <p>Starts {selectedEvent.start.toDateString()}</p>
             <p>Ends {selectedEvent.start.toDateString()}</p>
             {selectedEvent.contact && 
-              <a href={`http://localhost:3001/ContactsList`}>Contacts: {selectedEvent.contact} </a>}
+              <a href={`http://localhost:3001/ContactsList/`}>Contacts: {selectedEvent.contact} </a>}
           
       </div>
     )
