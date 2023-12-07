@@ -28,35 +28,38 @@ function CreateContactForm({ handleAddContacts }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Add Name"
-          style={{ width: "20%", marginRight: "10px" }}
+          // style={{ width: "20%", marginRight: "10px" }}
           value={newContact.name}
           onChange={(e) =>
             setNewContact({ ...newContact, name: e.target.value })
           }
         />
         <input
+          type="text"
           placeholder="Add Phone Number"
-          style={{ marginRight: "10px" }}
+          // style={{ marginRight: "10px" }}
           selected={newContact.phone}
           onChange={(e) =>
             setNewContact({ ...newContact, phone: e.target.value })
           }
         />
         <input
+          type="text"
           placeholder="Add Email"
-          style={{ marginRight: "10px" }}
+          // style={{ marginRight: "10px" }}
           selected={newContact.email}
           onChange={(e) =>
             setNewContact({ ...newContact, email: e.target.value })
           }
         />
         <input
+          type="text"
           placeholder="Add Address"
-          style={{ marginRight: "10px" }}
+          // style={{ marginRight: "10px" }}
           selected={newContact.address}
           onChange={(e) =>
             setNewContact({ ...newContact, address: e.target.value })
