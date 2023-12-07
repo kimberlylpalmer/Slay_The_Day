@@ -1,10 +1,7 @@
 import React, {useState} from "react";
 import ContactsList from "./ContactsList";
 import CreateContactForm from "./CreateContactForm";
-import {
-    
-    Link,
-} from "react-router-dom"
+import {Link,} from "react-router-dom"
 
 function Footer ({contacts, handleAddContact}) {;
 
