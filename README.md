@@ -3,14 +3,23 @@ Welcome to Slay the Day, your new personal calendar!
 
 # Table of Contents
 1.[Description](#description)
+
 2.[WireFrame](#wire-frame)
+
 3.[Features](#features)
+
 4.[Getting Started](#getting-started)
+
 5.[Usage](#usage)
+
 6.[User Stories](#user-stories)
+
 7.[License](#license)
+
 8.[Acknowledgements](#acknowledgements)
+
 9.[Authors](#authors)
+
 
 
 # Description
