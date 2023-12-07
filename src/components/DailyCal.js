@@ -158,7 +158,7 @@ function DailyCal({ events, onYearChange }) {
   return (
     <div>
       {selectedEvent && <Modal />}
-      <h2>Today's Date: {format(currentDate, "EEEE, MMMM do, yyyy")} </h2>
+      <h2 className="daily-date">Today's Date: {format(currentDate, "EEEE, MMMM do, yyyy")} </h2>
       <Calendar
         localizer={localizer}
         events={events}
