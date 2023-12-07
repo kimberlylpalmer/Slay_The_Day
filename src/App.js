@@ -1,3 +1,4 @@
+import WebFont from "webfontloader";
 import "./style.css";
 import "./App.css";
 import React, { useEffect, useState } from "react";
@@ -50,6 +51,14 @@ function App() {
     fetch(contactsAPI)
       .then((res) => res.json())
       .then(setContacts);
+  }, []);
+
+  useEffect(() => {
+    WebFont.load({
+      google: {
+        families: ["Silkscreen:400,700"],
+      },
+    });
   }, []);
 
   function onYearChange(newYear) {
