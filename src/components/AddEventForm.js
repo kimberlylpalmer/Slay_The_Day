@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import "../style.css";
 const eventsAPI = "http://localhost:3000/appointments";
 
 function AddEventForm({ handleAddEvent }) {
+
+ 
   const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "", contact: "" });
   
     function handleSubmit(e) {
