@@ -1,9 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Fira+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
 .App {border: 5px solid black;
 background-color: white;
 text-align: center;
+}
+
+* {
+    text-decoration: none;
 }
 
 .CalendarContainer{
@@ -120,6 +127,7 @@ padding: 2px; }
     border: 2px solid black;
     margin: 2px;
     padding: 2px;
+    font-family: 'Nova Square', sans-serif;
 }
 
 .rbc-toolbar {
@@ -183,6 +191,32 @@ padding: 2px; }
     z-index: 20; 
 }
 
+.card {
+    border: 5px solid darkgreen;
+    padding: 1rem;
+    width: 15rem;
+    height: 20rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 4px 4px 0px 0px darkgreen;
+}
 
+#contact-name {
+    font-family: 'Nova Square', sans-serif;
+    font-size: 30px;
+}
+
+.contact-text {
+    font-family: 'Nova Square', sans-serif;
+
+}
+
+.weekly-date {
+    font-family: 'Nova Square', sans-serif;
+}
+
+.daily-date {
+    font-family: 'Nova Square', sans-serif;
+}
 
 

@@ -5,6 +5,7 @@ import WeeklyCal from "./WeeklyCal";
 import DailyCal from "./DailyCal";
 import ContactsList from "./ContactsList";
 import { Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
 
 function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
   const combinedEvents = [...allEvents, ...holidayEvents];
@@ -25,7 +26,7 @@ function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
         </button>
       </nav>
       <Routes>
-        <Route path="/" />
+        <Route path="/" element={<Home />}/>
         <Route
           path="/MonthlyCal"
           element={
