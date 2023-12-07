@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# Slay The Day
+Welcome to Slay the Day, your new personal calendar! 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
+1.[Description](#description)
 
-## Available Scripts
+2.[WireFrame](#wire-frame)
 
-In the project directory, you can run:
+3.[Features](#features)
 
-### `npm start`
+4.[Getting Started](#getting-started)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+5.[Usage](#usage)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+6.[User Stories](#user-stories)
 
-### `npm test`
+7.[License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+8.[Acknowledgements](#acknowledgements)
 
-### `npm run build`
+9.[Authors](#authors)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Description
+Slay The Day is a calendar app that allows people to create and view calendar events for the current day, week, and month. The app also provides contact information for any event involving a person (birthdays, anniversaries, etc.). 
 
-### `npm run eject`
+[Back to Table of contents](#table-of-contents)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Wire-Frame
+![Phase 2 Wireframe](./phase%202%20wireframe.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Back to Table of contents](#table-of-contents)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Features
+**Monthly, Weekly, and Daily Calenders**: See your future laid out before you in three convenient views! 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Add Events**: Add upcoming events to your calendar with ease using our Add Event form. Include details like start time, end time, and any contacts that may be involved!
 
-## Learn More
+**Expanded Event View**: Forgotten who you're having drinks with next Friday? Just click on the event to see expanded details, including any of your contacts that are involved!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Contacts List**: Access your contacts' information with our conveniently attached online rolodex.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Add Contacts**: Going out with a new friend? Don't forget to add their contact info to your list for future reference using our Add Contact form! 
 
-### Code Splitting
+[Back to Table of contents](#table-of-contents)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Getting Started
+The following instructions will allow you to use the Slay the Day calendar app with ease.
 
-### Analyzing the Bundle Size
+[Back to Table of contents](#table-of-contents)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Usage
+-**Access Calendar Views**: Click on the "Monthly Calendar," "Weekly Calendar," or "Daily Calendar" buttons to access your different calendar views. 
 
-### Making a Progressive Web App
+-**Add Event**: Click on the "Add Event" button to open up the add event form. Once open, enter the event name, start date & time, end date & time, and the names of any involved contacts.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-**Expand Event View**: Click on any event in your calendar to see expanded information about it.
 
-### Advanced Configuration
+-**Access Contacts**: Click on the "Contacts List" button to be taken to a page with all of your added contacts. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-**Add Contact**: Click on the "Add Contact" button to open up the add contact form. Once open, enter the contact name, phone number, email address, and physical address (not all are required to save the contact).
 
-### Deployment
+[Back to Table of contents](#table-of-contents)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# User Stories
+On page load, users should be able to see a list of calendar events for the day, as well as calendar previews for the current week and month. They should also see three buttons: “Add Event,” “Contacts,” and “New Contacts.”
 
-### `npm run build` fails to minify
+On clicking the calendar view buttons, users should see an expanded calendar view of the current week or month.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+On clicking an item in the list of calendar events for the day, users should see a pop-up come up with information about the event, as well as a button that pulls up any contact info associated with the event (i.e. the name, address, email, and phone number for someone’s birthday). 
+
+On clicking the “Add Event” button, the page should open up a form that allows users to add an event to their calendar.
+
+On clicking the “Contacts” button, users should be able to pull up a list of their contacts.
+
+On clicking the “New Contact” button, the page should open up a form that allows users to add a new contact to their list. 
+
+[Back to Table of contents](#table-of-contents)
+
+# License
+MIT License
+
+Copyright (c) 2023 Slay The Day - Phase 2  
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files ("Slay the Day"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+SAY THE DAY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+[Back to Table of contents](#table-of-contents)
+
+# Acknowledgements
+-React Big Calendar
+
+-Public Holidays API
+
+[Back to Table of contents](#table-of-contents)
+
+# Authors
+Kimberly Palmer
+
+Holly Wheeler
+
+[Back to Table of contents](#table-of-contents)
+
