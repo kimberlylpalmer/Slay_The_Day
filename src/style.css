@@ -4,7 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Fira+Sans:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
-.App {border: 5px solid black;
+.App {
+    /* border: 5px solid black; */
 background-color: white;
 text-align: center;
 }
@@ -14,14 +15,12 @@ text-align: center;
 }
 
 .CalendarContainer{
-    border: 0px solid black;}
+    /* border: 0px solid black; */
+}
 
-/* #header {border: 0px solid black;
-margin: 20px; 
-} */
 
 .header-container {
-    border: 2px solid black !important;
+    /* border: 2px solid black !important; */
     margin: 2px !important;
     padding: 2px !important;
 }
@@ -51,14 +50,14 @@ margin: 20px;
 #header1 span:nth-child(3) {animation-delay: 4s;}
 
 .rbc-event {
-    border: 2px solid black !important;
+    border: 2px solid slateblue !important;
 }
 
 .react-datepicker-popper {
-    border: 2px solid black !important;
+    /* border: 2px solid black !important; */
     position: absolute !important; 
-    inset: 0px auto auto 0px !important;
-    transform: translate(800px, 0px) !important
+    inset: 10px auto auto 10px !important;
+    transform: translate(700px, 0px) !important
 }
 
 #header2 {
@@ -124,10 +123,28 @@ margin: 2px;
 padding: 2px; }
 
 .rbc-calendar {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     margin: 2px;
     padding: 2px;
     font-family: 'Nova Square', sans-serif;
+}
+
+.rbc-calendar>div:first-child {
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+.rbc-calendar>div>span {
+    /* border: 2px solid black; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* align-items: flex-start; */
+    /* width: 100%; */
+    font-size: 25px;
+ 
 }
 
 .rbc-toolbar {
@@ -229,7 +246,7 @@ padding: 2px; }
 .form input[type="text"], .form .react-datepicker-wrapper {
     height: 40px;
     border: 1px solid #ccc;
-    padding: 6px 10px;
+    /* padding: 10px 10px; */
     background-color: #f0f0f0;
     box-shadow: inset 0 2px 4px rgba(0,0,0,1);
 
@@ -238,7 +255,8 @@ padding: 2px; }
 .form input[type="text"] {
     height: 40px;
     border: 1px solid #ccc;
-    padding: 0 10px;
+    padding: 0px 10px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,1);
     /* width: 20%; */
 }
 
@@ -246,6 +264,7 @@ padding: 2px; }
     display: flex;
 }
 
-.form .react-datepicker__input-container {
+.form input[type='text'], .react-datepicker__input-container {
     display: block;
+}
 

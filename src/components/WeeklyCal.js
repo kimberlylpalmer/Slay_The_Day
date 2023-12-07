@@ -155,11 +155,13 @@ function WeeklyCal({ events, onYearChange }) {
       </>
     );
   };
-
+  const today = new Date();
   return (
     <div>
       {selectedEvent && <Modal />}
-      <h2 className="weekly-date">Today's Date: {format(currentDate, "EEEE, MMMM do, yyyy")} </h2>
+      <h2 className="weekly-date">
+        Today's Date: {format(today, "EEEE, MMMM do, yyyy")}{" "}
+      </h2>
       <Calendar
         localizer={localizer}
         events={events}
