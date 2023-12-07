@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import "../style.css";
 import MonthlyCal from "./MonthlyCal";
 import WeeklyCal from "./WeeklyCal";
 import DailyCal from "./DailyCal";
 import ContactsList from "./ContactsList";
-
 import { Routes, Route, Link } from "react-router-dom";
 
 function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
@@ -11,16 +11,16 @@ function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
   return (
     <div>
       <nav>
-        <button>
+        <button class="button">
           <Link to="/">Home</Link>
         </button>
-        <button>
+        <button class="button">
           <Link to="/MonthlyCal">Monthly Calendar</Link>
         </button>
-        <button>
+        <button class="button">
           <Link to="/WeeklyCal">Weekly Calendar</Link>
         </button>
-        <button>
+        <button class="button">
           <Link to="/DailyCal">Daily Calendar</Link>
         </button>
       </nav>

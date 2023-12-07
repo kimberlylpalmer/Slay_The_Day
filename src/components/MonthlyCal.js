@@ -6,7 +6,8 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
-import "../MonthlyCal.css"
+import "../MonthlyCal.css";
+import "../style.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -37,13 +38,13 @@ function MonthlyCal({ events, onYearChange }) {
     setCurrentDate(newDate);
   };
 
-  const [selectedEvent, setSelectedEvent] = useState(undefined)
-  const [modalState, setModalState] = useState(false)
-  
+  const [selectedEvent, setSelectedEvent] = useState(undefined);
+  const [modalState, setModalState] = useState(false);
+
   const handleSelectedEvent = (event) => {
-    setSelectedEvent(event)
-    setModalState(true)
-  }
+    setSelectedEvent(event);
+    setModalState(true);
+  };
 
   const closeModal = () => {
     setModalState(false);
@@ -51,18 +52,21 @@ function MonthlyCal({ events, onYearChange }) {
 
   const Modal = () => {
     return (
-      <div className={`modal-${modalState == true ? 'show' : 'hide'}`}>
-          <button onClick={closeModal}>x</button>
-            <h3>{selectedEvent.title}</h3>
-            <p>Starts {selectedEvent.start.toDateString()}</p>
-            <p>Ends {selectedEvent.start.toDateString()}</p>
-            {selectedEvent.contact && 
-              <a href={`http://localhost:3001/ContactsList/`}>Contacts: {selectedEvent.contact} </a>}
-          
+      <div className={`modal-${modalState == true ? "show" : "hide"}`}>
+        <button onClick={closeModal} class="button">
+          x
+        </button>
+        <h3>{selectedEvent.title}</h3>
+        <p>Starts {selectedEvent.start.toDateString()}</p>
+        <p>Ends {selectedEvent.start.toDateString()}</p>
+        {selectedEvent.contact && (
+          <a href={`http://localhost:3001/ContactsList/`}>
+            Contacts: {selectedEvent.contact}{" "}
+          </a>
+        )}
       </div>
-    )
-  }
-
+    );
+  };
 
   return (
     <div>
