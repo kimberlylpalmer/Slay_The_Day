@@ -67,11 +67,17 @@ function customToolBar(
 
   return (
     <div>
-      <button onClick={goToToday}>Today</button>
-      <button onClick={goToBack}>{"<"}</button>
+      <button onClick={goToToday} class="button">
+        Today
+      </button>
+      <button onClick={goToBack} class="button">
+        {"<"}
+      </button>
       <span>{format(toolbar.date, "MMMM yyyy")}</span>
-      <button onClick={goToNext}>{">"}</button>
-      <button onClick={() => setShowDatePicker(!showDatePicker)}>
+      <button onClick={goToNext} class="button">
+        {">"}
+      </button>
+      <button onClick={() => setShowDatePicker(!showDatePicker)} class="button">
         Pick a date
       </button>
       {showDatePicker && (
@@ -126,7 +132,9 @@ function WeeklyCal({ events, onYearChange }) {
   const Modal = () => {
     return (
       <div className={`modal-${modalState == true ? "show" : "hide"}`}>
-        <button onClick={closeModal}>x</button>
+        <button onClick={closeModal} class="button">
+          x
+        </button>
         <h3>{selectedEvent.title}</h3>
         <p>Starts {selectedEvent.start.toDateString()}</p>
         <p>Ends {selectedEvent.start.toDateString()}</p>

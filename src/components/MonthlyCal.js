@@ -52,16 +52,18 @@ function MonthlyCal({ events, onYearChange }) {
 
   const Modal = () => {
     return (
-
-      <div className={`modal-${modalState == true ? 'show' : 'hide'}`}>
-          <button onClick={closeModal}>x</button>
-            <h3>{selectedEvent.title}</h3>
-            <p>Starts {selectedEvent.start.toDateString()}</p>
-            <p>Ends {selectedEvent.start.toDateString()}</p>
-            {selectedEvent.contact && 
-              <a href={`http://localhost:3001/ContactsList/`}>Contacts: {selectedEvent.contact} </a>}
-          
-
+      <div className={`modal-${modalState == true ? "show" : "hide"}`}>
+        <button onClick={closeModal} class="button">
+          x
+        </button>
+        <h3>{selectedEvent.title}</h3>
+        <p>Starts {selectedEvent.start.toDateString()}</p>
+        <p>Ends {selectedEvent.start.toDateString()}</p>
+        {selectedEvent.contact && (
+          <a href={`http://localhost:3001/ContactsList/`}>
+            Contacts: {selectedEvent.contact}{" "}
+          </a>
+        )}
       </div>
     );
   };

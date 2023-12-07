@@ -14,7 +14,7 @@ function Footer({ contacts, handleAddContact }) {
   return (
     <div>
       <nav>
-        <button>
+        <button class="button">
           <Link to={"/ContactsList"}>Contacts List</Link>
         </button>
       </nav>
@@ -24,7 +24,9 @@ function Footer({ contacts, handleAddContact }) {
           handleAddContact={handleAddContact}
         />
       ) : null}
-      <button onClick={handleClick}>Add Contact</button>
+      <button onClick={handleClick} class="button">
+        Add Contact
+      </button>
     </div>
   );
 }

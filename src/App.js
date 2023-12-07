@@ -1,5 +1,5 @@
-import "./App.css";
 import "./style.css";
+import "./App.css";
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CalendarContainer from "./components/CalendarContainer";
