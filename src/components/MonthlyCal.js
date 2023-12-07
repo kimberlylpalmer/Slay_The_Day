@@ -52,7 +52,8 @@ function MonthlyCal({ events, onYearChange }) {
 
   const Modal = () => {
     return (
-      <div className={`modal-${modalState == true ? "show" : "hide"}`}>
+      <div
+        className={`modal-${modalState == true ? "show" : "hide"} apt-modal`}>
         <button onClick={closeModal} class="button">
           x
         </button>
