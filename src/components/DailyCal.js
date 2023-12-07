@@ -109,8 +109,35 @@ function DailyCal({ events, onYearChange }) {
     }
   }, [currentDate, previousYear, onYearChange]);
 
+  const [selectedEvent, setSelectedEvent] = useState(undefined)
+  const [modalState, setModalState] = useState(false)
+  
+  const handleSelectedEvent = (event) => {
+    setSelectedEvent(event)
+    setModalState(true)
+  }
+
+  const closeModal = () => {
+    setModalState(false);
+  };
+
+  const Modal = () => {
+    return (
+      <div className={`modal-${modalState == true ? 'show' : 'hide'}`}>
+          <button onClick={closeModal}>x</button>
+            <h3>{selectedEvent.title}</h3>
+            <p>Starts {selectedEvent.start.toDateString()}</p>
+            <p>Ends {selectedEvent.start.toDateString()}</p>
+            {selectedEvent.contact && 
+              <a href={`http://localhost:3001/ContactsList`}>Contacts: {selectedEvent.contact} </a>}
+          
+      </div>
+    )
+  }
+
   return (
     <div>
+      {selectedEvent && <Modal />}
       <h2>Today's Date: {format(currentDate, "EEEE, MMMM do, yyyy")} </h2>
       <Calendar
         localizer={localizer}
@@ -134,6 +161,7 @@ function DailyCal({ events, onYearChange }) {
         dayLayoutAlgorithm="no-overlap"
         min={minTime}
         max={maxTime}
+        onSelectEvent={(e) => handleSelectedEvent(e)}
       />
     </div>
   );

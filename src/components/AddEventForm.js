@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 const eventsAPI = "http://localhost:3000/appointments";
 
 function AddEventForm({ handleAddEvent }) {
-  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "" });
+  const [newEvent, setNewEvent] = useState({ title: "", start: "", end: "", contact: "" });
   
     function handleSubmit(e) {
         e.preventDefault()
@@ -43,6 +43,13 @@ function AddEventForm({ handleAddEvent }) {
                     onChange={(end) => setNewEvent({...newEvent, end})}  
                     showTimeSelect 
                     timeIntervals={10} />
+                <input 
+                type='text'
+                placeholder='Add Contact'
+                style={{width: "20%", marginRight: "10px"}}
+                value={newEvent.contact}
+                onChange={(e) => setNewEvent({...newEvent, contact: e.target.value})}
+                />
                  <button style={{marginTop: '10px'}} type="submit" >Add Event</button>
             </form>
         </div>
