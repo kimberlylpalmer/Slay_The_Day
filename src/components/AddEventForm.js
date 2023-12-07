@@ -17,8 +17,14 @@ function AddEventForm({ handleAddEvent }) {
 			body: JSON.stringify(newEvent)
 		})
 		.then(res => res.json())
-		.then(handleAddEvent);
+		.then((data) => {
+            handleAddEvent(data)
+            setNewEvent({title: "", start: "", end: "", contact: ""})
+        });
+
     }
+
+    
 
     return (
         <div>
