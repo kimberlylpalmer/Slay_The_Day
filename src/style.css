@@ -204,6 +204,7 @@ padding: 2px; }
 #contact-name {
     font-family: 'Nova Square', sans-serif;
     font-size: 30px;
+
 }
 
 .contact-text {
@@ -218,5 +219,33 @@ padding: 2px; }
 .daily-date {
     font-family: 'Nova Square', sans-serif;
 }
+.form {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px;
+}
 
+.form input[type="text"], .form .react-datepicker-wrapper {
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,1);
+
+    ;
+}
+.form input[type="text"] {
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    /* width: 20%; */
+}
+
+.form .react-datepicker-wrapper {
+    display: flex;
+}
+
+.form .react-datepicker__input-container {
+    display: block;
 

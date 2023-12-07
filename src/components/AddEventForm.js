@@ -31,7 +31,7 @@ function AddEventForm({ handleAddEvent }) {
 
   return (
     <div>
-      <form class="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Add Title"
@@ -64,7 +64,7 @@ function AddEventForm({ handleAddEvent }) {
             setNewEvent({ ...newEvent, contact: e.target.value })
           }
         />
-        <button style={{ marginTop: "10px" }} type="submit">
+        <button className="button" style={{ marginTop: "10px" }} type="submit">
           Add Event
         </button>
       </form>
