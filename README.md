@@ -105,12 +105,14 @@ SOFTWARE.
 
 # Acknowledgements
 -React Big Calendar
+
 -Public Holidays API
 
 [Back to Table of contents](#table-of-contents)
 
 # Authors
 Kimberly Palmer
+
 Holly Wheeler
 
 [Back to Table of contents](#table-of-contents)
