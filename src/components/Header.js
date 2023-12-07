@@ -25,7 +25,7 @@ export default function Header({ handleAddEvent }) {
       <h2 id="header2">What will you do today?</h2>
       {showForm ? <AddEventForm handleAddEvent={handleAddEvent} /> : null}
       <button onClick={handleClick} class="button">
-        Add an Event!
+        Add Event Form
       </button>
     </div>
   );

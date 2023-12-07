@@ -25,7 +25,7 @@ function Footer({ contacts, handleAddContact }) {
         />
       ) : null}
       <button onClick={handleClick} class="button">
-        Add Contact
+        New Contact
       </button>
     </div>
   );
