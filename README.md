@@ -1,7 +1,7 @@
-#Slay The Day
+# Slay The Day
 Welcome to Slay the Day, your new personal calendar! 
 
-##Table of Contents
+# Table of Contents
 1.[Description](#description)
 2.[WireFrame](#wire-frame)
 3.[Features](#features)
@@ -13,17 +13,17 @@ Welcome to Slay the Day, your new personal calendar!
 9.[Authors](#authors)
 
 
-#Description
+# Description
 Slay The Day is a calendar app that allows people to create and view calendar events for the current day, week, and month. The app also provides contact information for any event involving a person (birthdays, anniversaries, etc.). 
 
 [Back to Table of contents](#table-of-contents)
 
-#Wire-Frame
+# Wire-Frame
 ![Phase 2 Wireframe](./phase%202%20wireframe.png)
 
 [Back to Table of contents](#table-of-contents)
 
-#Features
+# Features
 **Monthly, Weekly, and Daily Calenders**: See your future laid out before you in three convenient views! 
 
 **Add Events**: Add upcoming events to your calendar with ease using our Add Event form. Include details like start time, end time, and any contacts that may be involved!
@@ -36,12 +36,12 @@ Slay The Day is a calendar app that allows people to create and view calendar ev
 
 [Back to Table of contents](#table-of-contents)
 
-#Getting Started
+# Getting Started
 The following instructions will allow you to use the Slay the Day calendar app with ease.
 
 [Back to Table of contents](#table-of-contents)
 
-#Usage
+# Usage
 -**Access Calendar Views**: Click on the "Monthly Calendar," "Weekly Calendar," or "Daily Calendar" buttons to access your different calendar views. 
 
 -**Add Event**: Click on the "Add Event" button to open up the add event form. Once open, enter the event name, start date & time, end date & time, and the names of any involved contacts.
@@ -54,7 +54,7 @@ The following instructions will allow you to use the Slay the Day calendar app w
 
 [Back to Table of contents](#table-of-contents)
 
-#User Stories
+# User Stories
 On page load, users should be able to see a list of calendar events for the day, as well as calendar previews for the current week and month. They should also see three buttons: “Add Event,” “Contacts,” and “New Contacts.”
 
 On clicking the calendar view buttons, users should see an expanded calendar view of the current week or month.
@@ -69,7 +69,7 @@ On clicking the “New Contact” button, the page should open up a form that al
 
 [Back to Table of contents](#table-of-contents)
 
-#License
+# License
 MIT License
 
 Copyright (c) 2023 Slay The Day - Phase 2  
@@ -94,13 +94,13 @@ SOFTWARE.
 
 [Back to Table of contents](#table-of-contents)
 
-#Acknowledgements
+# Acknowledgements
 -React Big Calendar
 -Public Holidays API
 
 [Back to Table of contents](#table-of-contents)
 
-#Authors
+# Authors
 Kimberly Palmer
 Holly Wheeler
 
