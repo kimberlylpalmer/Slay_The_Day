@@ -6,6 +6,13 @@
       "start": "2023-12-12T10:00:00",
       "end": "2023-12-12T11:00:00",
       "contact": ""
+    },
+    {
+      "title": "Doctor's Appointment",
+      "start": "2023-12-01T22:50:00.000Z",
+      "end": "2023-12-02T00:50:00.000Z",
+      "contact": "Holly Wheeler",
+      "id": 2
     }
   ],
   "contacts": [
