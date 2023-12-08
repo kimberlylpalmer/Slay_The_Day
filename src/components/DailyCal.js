@@ -106,6 +106,7 @@ function DailyCal({ events, onYearChange, removeElement }) {
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [previousYear, setPreviousYear] = useState(currentDate.getFullYear());
+  const today = new Date();
 
   useEffect(() => {
     const newYear = currentDate.getFullYear();
@@ -171,7 +172,9 @@ function DailyCal({ events, onYearChange, removeElement }) {
   return (
     <div>
       {selectedEvent && <Modal />}
-      <h2 className="daily-date">Today's Date: {format(currentDate, "EEEE, MMMM do, yyyy")} </h2>
+      <h2 className="daily-date">
+        Today's Date: {format(today, "EEEE, MMMM do, yyyy")}{" "}
+      </h2>
       <Calendar
         localizer={localizer}
         events={events}
