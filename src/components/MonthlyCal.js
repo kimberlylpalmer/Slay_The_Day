@@ -8,6 +8,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "../MonthlyCal.css";
 import "../style.css";
+import { id } from "date-fns/locale";
+
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -21,7 +23,7 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-function MonthlyCal({ events, onYearChange }) {
+function MonthlyCal({ events, onYearChange, removeElement }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [previousYear, setPreviousYear] = useState(currentDate.getFullYear());
 
@@ -50,6 +52,18 @@ function MonthlyCal({ events, onYearChange }) {
     setModalState(false);
   };
 
+  function handleDelete() {
+      fetch(`http://localhost:3000/appointments/${selectedEvent.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: null
+    })
+    .then(res => res.json())
+    .then(() => {removeElement(selectedEvent.id)})
+  }
+
   const Modal = () => {
     return (
       <>
@@ -65,11 +79,13 @@ function MonthlyCal({ events, onYearChange }) {
               <h3>{selectedEvent.title}</h3>
               <p>Starts {selectedEvent.start.toDateString()}</p>
               <p>Ends {selectedEvent.start.toDateString()}</p>
+              <p>{selectedEvent.id}</p>
               {selectedEvent.contact && (
                 <a href={`http://localhost:3001/ContactsList/`}>
                   Contacts: {selectedEvent.contact}{" "}
                 </a>
               )}
+              <button className='button' onClick={handleDelete}>Delete Event</button>
             </div>
           </div>
         )}

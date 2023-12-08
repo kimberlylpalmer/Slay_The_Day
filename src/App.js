@@ -77,6 +77,10 @@ function App() {
     setContacts([...contacts, newContact]);
   }
 
+  const removeElement = (id) => {
+    setAllEvents(allEvents.filter(event => event.id !== id))
+  }
+
   return (
     <Router>
       <div className="App">
@@ -85,6 +89,8 @@ function App() {
           allEvents={allEvents}
           holidayEvents={holidayEvents}
           onYearChange={onYearChange}
+          setAllEvents={setAllEvents}
+          removeElement={removeElement}
         />
 
         <Footer contacts={contacts} handleAddContact={handleAddContact} />
