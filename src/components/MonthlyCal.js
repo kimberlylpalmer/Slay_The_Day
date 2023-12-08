@@ -79,8 +79,8 @@ function MonthlyCal({ events, onYearChange, removeElement }) {
                 Close
               </button>
               <h3>{selectedEvent.title}</h3>
-              <p>Starts {selectedEvent.start.toDateString()}</p>
-              <p>Ends {selectedEvent.start.toDateString()}</p>
+              <p>Starts {selectedEvent.start.toString()}</p>
+              <p>Ends {selectedEvent.end.toString()}</p>
               {selectedEvent.contact && (
                 <a href={`http://localhost:3001/ContactsList/`}>
                   Contacts: {selectedEvent.contact}{" "}
