@@ -92,7 +92,6 @@ function App() {
           setAllEvents={setAllEvents}
           removeElement={removeElement}
         />
-
         <Footer contacts={contacts} handleAddContact={handleAddContact} />
       </div>
     </Router>
