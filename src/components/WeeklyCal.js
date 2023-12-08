@@ -131,15 +131,18 @@ function WeeklyCal({ events, onYearChange, removeElement }) {
 
   function handleDelete() {
     fetch(`http://localhost:3000/appointments/${selectedEvent.id}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: null
-  })
-  .then(res => res.json())
-  .then(() => {removeElement(selectedEvent.id)})
-}
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: null,
+    })
+      .then((res) => res.json())
+      .then(() => {
+        removeElement(selectedEvent.id);
+        closeModal();
+      });
+  }
 
   const Modal = () => {
     return (
@@ -161,7 +164,10 @@ function WeeklyCal({ events, onYearChange, removeElement }) {
                   Contacts: {selectedEvent.contact}{" "}
                 </a>
               )}
-              <button className='button' onClick={handleDelete}>Delete Event</button>
+              <p> </p>
+              <button className="button" onClick={handleDelete}>
+                Delete Event
+              </button>
             </div>
           </div>
         )}

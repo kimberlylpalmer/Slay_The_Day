@@ -10,7 +10,6 @@ import "../MonthlyCal.css";
 import "../style.css";
 import { id } from "date-fns/locale";
 
-
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
 };
@@ -53,15 +52,18 @@ function MonthlyCal({ events, onYearChange, removeElement }) {
   };
 
   function handleDelete() {
-      fetch(`http://localhost:3000/appointments/${selectedEvent.id}`, {
-      method: 'DELETE',
+    fetch(`http://localhost:3000/appointments/${selectedEvent.id}`, {
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: null
+      body: null,
     })
-    .then(res => res.json())
-    .then(() => {removeElement(selectedEvent.id)})
+      .then((res) => res.json())
+      .then(() => {
+        removeElement(selectedEvent.id);
+        closeModal();
+      });
   }
 
   const Modal = () => {
@@ -85,7 +87,10 @@ function MonthlyCal({ events, onYearChange, removeElement }) {
                   Contacts: {selectedEvent.contact}{" "}
                 </a>
               )}
-              <button className='button' onClick={handleDelete}>Delete Event</button>
+              <p> </p>
+              <button className="button" onClick={handleDelete}>
+                Delete Event
+              </button>
             </div>
           </div>
         )}
