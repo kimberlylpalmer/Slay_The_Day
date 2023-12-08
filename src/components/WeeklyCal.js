@@ -95,7 +95,7 @@ function customToolBar(
   );
 }
 
-function WeeklyCal({ events, onYearChange }) {
+function WeeklyCal({ events, onYearChange, removeElement }) {
   const minTime = new Date();
   minTime.setHours(6, 0, 0);
   const maxTime = new Date();
@@ -129,6 +129,18 @@ function WeeklyCal({ events, onYearChange }) {
     setModalState(false);
   };
 
+  function handleDelete() {
+    fetch(`http://localhost:3000/appointments/${selectedEvent.id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: null
+  })
+  .then(res => res.json())
+  .then(() => {removeElement(selectedEvent.id)})
+}
+
   const Modal = () => {
     return (
       <>
@@ -149,6 +161,7 @@ function WeeklyCal({ events, onYearChange }) {
                   Contacts: {selectedEvent.contact}{" "}
                 </a>
               )}
+              <button className='button' onClick={handleDelete}>Delete Event</button>
             </div>
           </div>
         )}

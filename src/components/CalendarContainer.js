@@ -7,7 +7,7 @@ import ContactsList from "./ContactsList";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
 
-function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
+function CalendarContainer({ allEvents, holidayEvents, onYearChange, removeElement}) {
   const combinedEvents = [...allEvents, ...holidayEvents];
   return (
     <div>
@@ -30,17 +30,17 @@ function CalendarContainer({ allEvents, holidayEvents, onYearChange }) {
         <Route
           path="/MonthlyCal"
           element={
-            <MonthlyCal events={combinedEvents} onYearChange={onYearChange} />
+            <MonthlyCal events={combinedEvents} onYearChange={onYearChange} removeElement={removeElement}/>
           }></Route>
         <Route
           path="/WeeklyCal"
           element={
-            <WeeklyCal events={combinedEvents} onYearChange={onYearChange} />
+            <WeeklyCal events={combinedEvents} onYearChange={onYearChange} removeElement={removeElement}/>
           }></Route>
         <Route
           path="/DailyCal"
           element={
-            <DailyCal events={combinedEvents} onYearChange={onYearChange} />
+            <DailyCal events={combinedEvents} onYearChange={onYearChange} removeElement={removeElement}/>
           }></Route>
         <Route path="/ContactsList" element={<ContactsList />}></Route>
       </Routes>
