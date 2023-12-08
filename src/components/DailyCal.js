@@ -157,8 +157,14 @@ function DailyCal({ events, onYearChange, removeElement }) {
                 Close
               </button>
               <h3 className="modal-header">{selectedEvent.title}</h3>
-              <p>Starts {selectedEvent.start.toDateString()}</p>
-              <p>Ends {selectedEvent.start.toDateString()}</p>
+              <p>
+                Starts {selectedEvent.start.toDateString()}{" "}
+                {selectedEvent.start.toLocaleTimeString()}
+              </p>
+              <p>
+                Ends {selectedEvent.end.toDateString()}{" "}
+                {selectedEvent.end.toLocaleTimeString()}{" "}
+              </p>
               {selectedEvent.contact && (
                 <a href={`http://localhost:3001/ContactsList`}>
                   Contacts: {selectedEvent.contact}{" "}
